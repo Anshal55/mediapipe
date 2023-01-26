@@ -32,6 +32,15 @@ node {
   output_stream: "HAND_ROIS_FROM_PALM_DETECTIONS:multi_palm_rects"
 }
 
+
+# Fps Counter
+node {
+  calculator: "FrameRateCounter"
+  input_stream: "INPUT:landmarks"
+  output_stream: "FPS:frame_rate"
+}
+
+
 # Subgraph that renders annotations and overlays them on top of the input
 # images (see hand_renderer_cpu.pbtxt).
 node {
